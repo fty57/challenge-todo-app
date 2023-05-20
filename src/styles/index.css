@@ -104,7 +104,6 @@ body {
 }
 
 .todo-item {
-  z-index: -1;
   width: 100%;
   display: flex;
   cursor: pointer;
@@ -118,7 +117,6 @@ body {
 }
 
 .todo-item:hover {
-  z-index: 10;
   transform: translateY(-2px);
   border-color: hsl(235, 24%, 19%);
   box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);

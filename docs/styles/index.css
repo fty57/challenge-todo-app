@@ -187,7 +187,7 @@ body {
 }
 
 .new-todo__input input::placeholder {
-  color: hsl(233, 14%, 35%);
+  color: hsl(234, 28%, 66%);
 }
 
 .hidden {

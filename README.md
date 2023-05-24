@@ -8,9 +8,9 @@ Alguns ajustes podem vir, porém creio que esse projeto foi terminado. O qual se
 
 ### Screenshot
 
-![Minha tela - Desktop - 1](./src/screenshots/Screenshot_1.png)
-![Minha tela - Desktop - 2](./src/screenshots/Screenshot_2.png)
-![Minha tela - Desktop - 3](./src/screenshots/Screenshot_3.png)
+![Minha tela - Desktop - 1](./docs/screenshots/Screenshot_1.png)
+![Minha tela - Desktop - 2](./docs/screenshots/Screenshot_2.png)
+![Minha tela - Desktop - 3](./docs/screenshots/Screenshot_3.png)
 
 # Recursos úteis:
 

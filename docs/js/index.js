@@ -38,32 +38,6 @@ function addTodoItem() {
   saveData();
 }
 
-function filterTasks(filterOption) {
-  var todoList = document.getElementById("todo-container");
-  var tasks = todoList.getElementsByTagName("li");
-
-  for (var i = 0; i < tasks.length; i++) {
-    var task = tasks[i];
-
-    if (filterOption === "active") {
-      if (task.classList.contains("checked")) {
-        task.classList.add("hidden");
-      } else {
-        task.classList.remove("hidden");
-      }
-    } else if (filterOption === "checked") {
-      if (task.classList.contains("checked")) {
-        task.classList.remove("hidden");
-      } else {
-        task.classList.add("hidden");
-      }
-    } else {
-      // Mostrar todas as tarefas
-      task.classList.remove("hidden");
-    }
-  }
-}
-
 function clearCompletedTasks() {
   var todoList = document.getElementById("todo-container");
   var tasks = todoList.getElementsByTagName("li");
@@ -84,15 +58,6 @@ function saveData() {
 function showTask() {
   todoContainer.innerHTML = localStorage.getItem('data');
 }
-
-var itemsStatuses = document.querySelector(".items-statuses");
-
-itemsStatuses.addEventListener("click", function (e) {
-  if (e.target.tagName === "SPAN") {
-    var filterOption = e.target.textContent.toLowerCase();
-    filterTasks(filterOption);
-  }
-});
 
 var itemsClear = document.querySelector(".items-clear");
 
@@ -118,4 +83,4 @@ setInterval(updateItemsLeft, 1000);
 /*==================== PARALLAX SCRIPT ====================*/
 window.addEventListener('scroll', e => {
   document.body.style.cssText = `--scrollTop: ${this.scrollY}px`
-})
+});

@@ -47,6 +47,7 @@ function clearCompletedTasks() {
 
     task.remove();
   }
+  saveData();
 }
 
 function saveData() {

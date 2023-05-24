@@ -45,9 +45,7 @@ function clearCompletedTasks() {
   for (var i = tasks.length - 1; i >= 0; i--) {
     var task = tasks[i];
 
-    if (task.classList.contains("checked")) {
-      task.remove();
-    }
+    task.remove();
   }
 }
 

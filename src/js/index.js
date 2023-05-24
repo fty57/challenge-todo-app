@@ -113,6 +113,12 @@ function showTask() {
   todoContainer.innerHTML = localStorage.getItem('data');
 }
 
+// Parallax Script
+window.addEventListener('scroll', e => {
+  document.body.style.cssText = `--scrollTop: ${this.scrollY}px`
+})
+
+
 showTask();
 updateItemsLeft();
 setInterval(updateItemsLeft, 1000);

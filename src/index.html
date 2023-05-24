@@ -14,52 +14,81 @@
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
-    <div class="background-image">
-      <img src="./assets/bg-desktop-dark.jpg" />
-    </div>
-    <div class="container">
-      <div class="header">
-        <div class="header__title">TODO</div>
-        <div class="header__theme">
-          <img src="./assets/icon-sun.svg" />
+    <header class="main-header">
+      <div class="layers">
+        <div class="layer__header">
+          <div class="layers__title">Cosmic TODO</div>
+          <div class="layers__caption">Por Álisson</div>
         </div>
+        <div
+          class="layer layers__base"
+          style="background-image: url(./assets/img/layer-base.jpg)"
+        ></div>
+        <div
+          class="layer layers__middle"
+          style="background-image: url(./assets/img/layer-middle.jpg)"
+        ></div>
+        <div
+          class="layer layers__front"
+          style="background-image: url(./assets/img/layer-front.jpg)"
+        ></div>
       </div>
-      <div class="new-todo">
-        <div class="check">
-          <div class="check__mark"></div>
-        </div>
-        <div class="new-todo__input">
-          <div class="row">
-            <input
-              id="todo-input"
-              type="text"
-              placeholder="Create a new todo..."
-            />
-            <button class="input__button" onclick="addTodoItem()">Add</button>
+    </header>
+
+    <article
+      class="main-article"
+      style="
+        background-image: url(./assets/img/cave-interior-with-sunlight.jpg);
+      "
+    >
+      <div class="main-article__content">
+        <div class="main">
+          <div class="container">
+            <div class="header">
+              <div class="header__title">TODO</div>
+            </div>
+            <div class="new-todo">
+              <div class="check">
+                <div class="check__mark"></div>
+              </div>
+              <div class="new-todo__input">
+                <div class="row">
+                  <input
+                    id="todo-input"
+                    type="text"
+                    placeholder="Create a new todo..."
+                  />
+                  <button class="input__button" onclick="addTodoItem()">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="todo-items__wrapper">
+              <ul id="todo-container">
+                <!--
+                <li class="checked">Task 1</li>
+                <li>Task 3</li>
+                <li>Task 2</li> 
+                -->
+              </ul>
+              <div class="todo-items__info">
+                <div class="items-left">0 items left</div>
+                <div class="items-statuses">
+                  <span class="active">All</span>
+                  <span>Active</span>
+                  <span>Checked</span>
+                </div>
+                <div class="items-clear">
+                  <span>Clear Completed</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="todo-items__wrapper">
-        <ul id="todo-container">
-          <!--
-          <li class="checked">Task 1</li>
-          <li>Task 3</li>
-          <li>Task 2</li> 
-          -->
-        </ul>
-        <div class="todo-items__info">
-          <div class="items-left">0 items left</div>
-          <div class="items-statuses">
-            <span class="active">All</span>
-            <span>Active</span>
-            <span>Checked</span>
-          </div>
-          <div class="items-clear">
-            <span>Clear Completed</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    </article>
+
     <script src="./js/index.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+/*==================== TODO ====================*/
 const inputBox = document.getElementById('todo-input');
 const todoContainer = document.getElementById('todo-container');
 
@@ -18,7 +19,7 @@ function countRemainingTasks() {
 function updateItemsLeft() {
   var itemsLeftDiv = document.querySelector(".items-left");
   var remaining = countRemainingTasks();
-  itemsLeftDiv.textContent = remaining + " items left";
+  itemsLeftDiv.textContent = remaining + " items restantes";
 }
 
 function addTodoItem() {
@@ -63,16 +64,6 @@ function filterTasks(filterOption) {
   }
 }
 
-var itemsStatuses = document.querySelector(".items-statuses");
-
-itemsStatuses.addEventListener("click", function (e) {
-  if (e.target.tagName === "SPAN") {
-    var filterOption = e.target.textContent.toLowerCase();
-    filterTasks(filterOption);
-  }
-});
-
-
 function clearCompletedTasks() {
   var todoList = document.getElementById("todo-container");
   var tasks = todoList.getElementsByTagName("li");
@@ -86,13 +77,28 @@ function clearCompletedTasks() {
   }
 }
 
+function saveData() {
+  localStorage.setItem('data', todoContainer.innerHTML);
+}
+
+function showTask() {
+  todoContainer.innerHTML = localStorage.getItem('data');
+}
+
+var itemsStatuses = document.querySelector(".items-statuses");
+
+itemsStatuses.addEventListener("click", function (e) {
+  if (e.target.tagName === "SPAN") {
+    var filterOption = e.target.textContent.toLowerCase();
+    filterTasks(filterOption);
+  }
+});
+
 var itemsClear = document.querySelector(".items-clear");
 
 itemsClear.addEventListener("click", function () {
   clearCompletedTasks();
 });
-
-
 
 todoContainer.addEventListener('click', function (e) {
   if (e.target.tagName === 'LI') {
@@ -105,20 +111,11 @@ todoContainer.addEventListener('click', function (e) {
   }
 }, false);
 
-function saveData() {
-  localStorage.setItem('data', todoContainer.innerHTML);
-}
-
-function showTask() {
-  todoContainer.innerHTML = localStorage.getItem('data');
-}
-
-// Parallax Script
-window.addEventListener('scroll', e => {
-  document.body.style.cssText = `--scrollTop: ${this.scrollY}px`
-})
-
-
 showTask();
 updateItemsLeft();
 setInterval(updateItemsLeft, 1000);
+
+/*==================== PARALLAX SCRIPT ====================*/
+window.addEventListener('scroll', e => {
+  document.body.style.cssText = `--scrollTop: ${this.scrollY}px`
+})

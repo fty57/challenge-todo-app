@@ -4,20 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do App</title>
+    <title>To Do Cósmico</title>
+
+    <!--==================== UNICONS ====================-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/img/favicon-32x32.png"
+    />
+
+    <!--==================== FONTS ====================-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!--==================== CSS ====================-->
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body>
+    <!--==================== HEADER ====================-->
     <header class="main-header">
+      <!--==================== LAYERS ====================-->
       <div class="layers">
         <div class="layer__header">
-          <div class="layers__title">Cosmic TODO</div>
+          <div class="layers__title">TO DO CÓSMICO</div>
           <div class="layers__caption">Por Álisson</div>
         </div>
         <div
@@ -35,6 +48,7 @@
       </div>
     </header>
 
+    <!--==================== ARTICLE ====================-->
     <article
       class="main-article"
       style="
@@ -42,53 +56,48 @@
       "
     >
       <div class="main-article__content">
-        <div class="main">
-          <div class="container">
-            <div class="header">
-              <div class="header__title">TODO</div>
+        <div class="header">
+          <div class="header__title">TODO</div>
+        </div>
+        <div class="new-todo">
+          <div class="check">
+            <div class="check__mark"></div>
+          </div>
+          <div class="new-todo__input">
+            <div class="row">
+              <input
+                id="todo-input"
+                type="text"
+                placeholder="Criar um novo item..."
+              />
+              <button class="input__button" onclick="addTodoItem()">
+                Adicionar
+              </button>
             </div>
-            <div class="new-todo">
-              <div class="check">
-                <div class="check__mark"></div>
-              </div>
-              <div class="new-todo__input">
-                <div class="row">
-                  <input
-                    id="todo-input"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
-                  <button class="input__button" onclick="addTodoItem()">
-                    Add
-                  </button>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="todo-items__wrapper">
+          <ul id="todo-container">
+            <!--<li class="checked">Task 1</li>-->
+            <!--<li>Task 3</li>-->
+            <!--<li>Task 2</li>-->
+          </ul>
+          <div class="todo-items__info">
+            <div class="items-left">0 items restantes</div>
+            <div class="items-statuses">
+              <span>Tudo</span>
+              <span>Ativo</span>
+              <span>Completo</span>
             </div>
-            <div class="todo-items__wrapper">
-              <ul id="todo-container">
-                <!--
-                <li class="checked">Task 1</li>
-                <li>Task 3</li>
-                <li>Task 2</li> 
-                -->
-              </ul>
-              <div class="todo-items__info">
-                <div class="items-left">0 items left</div>
-                <div class="items-statuses">
-                  <span class="active">All</span>
-                  <span>Active</span>
-                  <span>Checked</span>
-                </div>
-                <div class="items-clear">
-                  <span>Clear Completed</span>
-                </div>
-              </div>
+            <div class="items-clear">
+              <span>Limpar</span>
             </div>
           </div>
         </div>
       </div>
     </article>
 
+    <!--==================== MAIN JS ====================-->
     <script src="./js/index.js"></script>
   </body>
 </html>
